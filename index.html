@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050713">
+  <title>Для тебя ♡</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <canvas id="stars"></canvas>
+
+  <!-- Первый экран -->
+  <main class="intro-screen" id="intro">
+    <div class="signal">
+      <div class="small-text">UNKNOWN SIGNAL DETECTED</div>
+      <div class="planet">✦</div>
+
+      <h1>Есть кое-что особенное...</h1>
+      <p>Кажется, это сообщение предназначено именно тебе.</p>
+
+      <button id="scanButton">Проверить сигнал</button>
+
+      <div class="coordinates">SIGNAL 001 · DEEP SPACE</div>
+    </div>
+  </main>
+
+  <!-- Экран с письмом -->
+  <main class="letter-screen" id="letterScreen">
+
+    <div class="letter-heading">
+      <span>ONE SPECIAL MESSAGE</span>
+      <h2>Небольшое послание для тебя</h2>
+      <p>Нажми на конверт, чтобы открыть его</p>
+    </div>
+
+    <!-- Конверт -->
+    <div class="envelope-area">
+      <button class="envelope" id="envelope" aria-label="Открыть письмо">
+
+        <div class="envelope-back"></div>
+
+        <div class="letter-preview">
+          <span>Для тебя ♡</span>
+        </div>
+
+        <div class="envelope-front"></div>
+        <div class="envelope-flap"></div>
+
+        <div class="heart">♡</div>
+
+        <!-- Части оболочки -->
+        <div class="shard shard-1"></div>
+        <div class="shard shard-2"></div>
+        <div class="shard shard-3"></div>
+        <div class="shard shard-4"></div>
+        <div class="shard shard-5"></div>
+        <div class="shard shard-6"></div>
+        <div class="shard shard-7"></div>
+        <div class="shard shard-8"></div>
+
+      </button>
+    </div>
+
+    <!-- Письмо -->
+    <article class="letter-paper" id="paper">
+      <div class="paper-content">
+
+        <div class="paper-date">A LETTER FROM MY HEART</div>
+
+        <h2>Алина...</h2>
+
+        <p>
+          Я слишком долго ждал подходящего момента,
+          чтобы сказать тебе то, о чём думал уже давно.
+          И вот настало время признаться тебе...
+        </p>
+
+        <p class="question">Я люблю тебя!</p>
+
+        <p>
+          Знаю, я тормозил много раз и, возможно,
+          вёл себя глупо. И я сожалею о том,
+          что не сказал тебе этого раньше.
+        </p>
+
+        <p>
+          Я искал «подходящий момент»,
+          хотя этот момент был всегда здесь и сейчас.
+        </p>
+
+        <p>
+          Я думал, что влюбился в тебя в какой-то
+          определённый момент, но на самом деле
+          я влюблялся в тебя каждую секунду, минуту,
+          час и каждый день общения с тобой, Алина.
+          Главное, что ты была рядом со мной.
+        </p>
+
+        <p>
+          И я не могу жить с мыслью, что так и не
+          признался тебе в своих чувствах.
+          Лучше я выскажу тебе в этом письме то,
+          о чём думаю, чем буду жалеть об этом всю жизнь.
+        </p>
+
+        <p>
+          И я хочу получить ответ на свой вопрос.
+        </p>
+
+        <p class="question">
+          Будешь ли ты моей девушкой?
+        </p>
+
+        <p class="korean">나랑 사귈래?</p>
+
+        <p class="translation">
+          
+        </p>
+
+        <div class="signature">
+          Твой Даниель ♡
+        </div>
+
+      </div>
+    </article>
+
+    <div class="bottom-note">
+      MADE WITH  ♡
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
