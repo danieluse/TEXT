@@ -1,4 +1,3 @@
-
 /* ЗВЁЗДНОЕ НЕБО */
 
 const canvas = document.getElementById("stars");
@@ -137,9 +136,64 @@ envelope.addEventListener("click", () => {
     setTimeout(() => {
       paper.scrollIntoView({
         behavior: "smooth",
-        block: "center"
+        block: "start"
       });
     }, 300);
 
-  }, 1650);
+  }, 2100);
 });
+
+
+/* ===== HANDWRITING EFFECT ===== */
+
+function startHandwriting() {
+    const paper = document.getElementById("paper");
+
+    if (!paper || paper.dataset.handwritingStarted) return;
+
+    paper.dataset.handwritingStarted = "true";
+
+    const elements = paper.querySelectorAll(
+        ".paper-content h2, .paper-content p, .paper-content .signature"
+    );
+
+    let delay = 0;
+
+    elements.forEach(element => {
+        const originalText = element.textContent;
+
+        element.textContent = "";
+
+        [...originalText].forEach(character => {
+            const span = document.createElement("span");
+
+            span.className = "handwriting-char";
+            span.textContent = character;
+            span.style.setProperty("--char-delay", `${delay}s`);
+
+            element.appendChild(span);
+
+            delay += 0.045;
+        });
+
+        delay += 0.6;
+    });
+}
+
+// Запускаем написание после появления письма
+const handwritingPaper = document.getElementById("paper");
+
+if (handwritingPaper) {
+    const handwritingObserver = new MutationObserver(() => {
+        if (handwritingPaper.classList.contains("show")) {
+            startHandwriting();
+            handwritingObserver.disconnect();
+        }
+    });
+
+    handwritingObserver.observe(handwritingPaper, {
+        attributes: true,
+        attributeFilter: ["class"]
+    });
+}
+
