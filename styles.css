@@ -272,7 +272,9 @@ body {
   transition: transform .8s;
   z-index: 4;
 }
-
+.envelope.opened .envelope-flap {
+  z-index: 1;
+}
 .heart {
   position: absolute;
   z-index: 5;
@@ -612,4 +614,47 @@ body {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
   }
+}
+
+/* ===== HANDWRITTEN LETTER ===== */
+
+.paper-content h2,
+.paper-content p,
+.paper-content .signature {
+    font-family: 'Marck Script', cursive;
+}
+
+.paper-content {
+    font-size: clamp(20px, 3vw, 25px);
+    line-height: 1.8;
+}
+
+.paper-content .handwriting-char {
+    display: inline;
+    opacity: 0;
+    animation: inkAppear 0.08s ease forwards;
+    animation-delay: var(--char-delay);
+}
+
+@keyframes inkAppear {
+    from {
+        opacity: 0;
+        filter: blur(1px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.paper-date {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+@media (max-width: 600px) {
+    .paper-content {
+        font-size: 21px;
+        line-height: 1.7;
+    }
 }
